@@ -47,7 +47,7 @@
     </div>
 
     <div class="grid grid-cols-3 mt-16 w-3/6 mx-auto items-end h-fit">
-      <div class="bg-sky-100 border-sky-200/50 rounded-2xl pt-2 shadow-md">
+      <div class="bg-sky-100 border-sky-200/50 rounded-2xl pt-2 shadow-md group hover:bg-sky-500 transition-all cursor-default hover:scale-105 hover:shadow-sky-500/50 hover:shadow-lg">
         <div class="flex w-fit ml-5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-16 inline stroke-yellow-400"
+            class="size-16 inline stroke-yellow-400 group-hover:stroke-yellow-300"
           >
             <path
               stroke-linecap="round"
@@ -64,8 +64,8 @@
             />
           </svg>
           <div class="mt-2 ml-3 pb-3">
-            <p class="text-2xl font-extrabold text-sky-400">26°</p>
-            <p class="text-lg font-semibold text-sky-300 -mt-2">Mostly Clear</p>
+            <p class="text-2xl font-extrabold text-sky-400 group-hover:text-white">26°</p>
+            <p class="text-lg font-semibold text-sky-300 group-hover:text-sky-200  -mt-2">Mostly Clear</p>
           </div>
         </div>
       </div>
@@ -76,14 +76,14 @@
           <p>December</p>
         </div>
         <div
-          class="bg-slate-800 rounded-xl py-4 px-6 pt-5 text-white text-5xl font-extrabold w-fit mx-auto mt-5 text-center shadow-lg"
+          class="bg-slate-800 rounded-xl py-4 px-6 pt-5 text-white text-5xl font-extrabold w-fit mx-auto mt-5 text-center shadow-lg hover:"
         >
           5<br />
           <p class="font-medium text-lg text-slate-300">Thursday</p>
         </div>
       </div>
 
-      <div class="bg-rose-100 border-sky-200/50 rounded-2xl pt-2 shadow-md">
+      <div class="bg-rose-100 border-sky-200/50 rounded-2xl pt-2 shadow-md group hover:bg-rose-400 transition-all cursor-default hover:scale-105 hover:shadow-rose-500/50 hover:shadow-lg">
         <div class="flex w-fit ml-5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +91,7 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-14 inline stroke-yellow-400"
+            class="size-14 inline stroke-yellow-400 group-hover:stroke-yellow-300"
           >
             <path
               stroke-linecap="round"
@@ -101,20 +101,20 @@
           </svg>
 
           <div class="mt-2 ml-3 pb-3">
-            <p class="text-2xl font-extrabold text-rose-400">8h 31m</p>
-            <p class="text-lg font-semibold text-rose-300 -mt-2">Sleep</p>
+            <p class="text-2xl font-extrabold text-rose-400 group-hover:text-white">8h 31m</p>
+            <p class="text-lg font-semibold text-rose-300 -mt-2 group-hover:text-rose-200">Sleep</p>
           </div>
         </div>
       </div>
 
-      <div class="bg-white mt-8 col-span-3 rounded-xl px-8 py-5">
+      <div class="bg-white mt-8 col-span-3 rounded-xl px-8 pt-8">
         <div
-          class="bg-slate-100 p-1.5 px-5 rounded-lg font-bold text-lg text-slate-700"
+          class=" p-1.5 px-5 rounded-lg font-bold text-lg text-slate-700"
         >
           Forest adventure trying to find a treasure chest
         </div>
         <div
-          class="bg-slate-100 text-justify p-5 px-5 rounded-lg text-sm font-medium text-slate-700 mt-3 h-100"
+          class="bg-slate-100 text-justify p-5 px-5 rounded-lg text-sm font-medium text-slate-600 mt-3 h-100"
         >
           I woke up to the sound of birds chirping outside my window. Today was
           the day—Jack and I were going to find the treasure chest hidden deep
@@ -129,6 +129,7 @@
           shiny coins and a note: “The true treasure is your courage and
           friendship.” I smiled at Jack. This was the best adventure ever.
         </div>
+        <p class="text-xs font-medium italic text-slate-500 mt-3 mb-3 text-right">Edited at 12-05-23</p>
       </div>
     </div>
   </body>
