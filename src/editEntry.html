@@ -21,7 +21,7 @@
     <div
       class=" w-2/6 mx-auto rounded-xl p-3 flex place-items-center font-medium px-12 gap-12 *:py-1 *:rounded-full *:transition-all"
     >
-      <button
+      <button onclick="home()"
         class="basis-2/6 flex justify-center items-center gap-3 text-violet-600 hover:bg-white hover:shadow-sm active:bg-violet-200 hover:scale-105"
       >
         <svg
@@ -40,7 +40,7 @@
         </svg>
         <span>Home</span>
       </button>
-      <button
+      <button onclick="journal()"
         class="basis-2/6 flex justify-center items-center gap-3 font-semibold text-sky-700 shadow-lg shadow-sky-500/20 bg-sky-100 hover:scale-105 hover:bg-sky-500 hover:shadow-sky-500/50 hover:text-white active:bg-sky-600"
       >
         <svg
@@ -59,7 +59,7 @@
         </svg>
         <span>Journal</span>
       </button>
-      <button
+      <button onclick="calendar()"
         class="basis-2/6 flex justify-center items-center gap-3 text-blue-600 hover:bg-white hover:shadow-sm active:bg-blue-200 hover:scale-105"
       >
         <svg
@@ -240,5 +240,17 @@ I woke up to the sound of birds chirping outside my window. Today was the day—
         </div>
       </div>
     </div>
+
+    <script>
+      function home(){
+        window.location.href = "home.html"
+      }
+      function journal(){
+        window.location.href = "entry.html"
+      }
+      function calendar(){
+        window.location.href = "calendar.html"
+      }
+    </script>
   </body>
 </html>
