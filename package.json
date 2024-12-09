@@ -1,5 +1,12 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.4.16"
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongoose": "^8.8.4",
+    "morgan": "^1.10.0",
+    "node": "^22.12.0"
   }
 }

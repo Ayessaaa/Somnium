@@ -23,8 +23,9 @@
     <div
       class="w-2/6 mx-auto rounded-xl p-3 flex place-items-center font-medium px-12 gap-12 *:py-1 *:rounded-full *:transition-all"
     >
-      <button onclick="home()"
-        class="basis-2/6 flex justify-center items-center gap-3 font-semibold text-violet-700 shadow-lg shadow-violet-500/20 bg-violet-100 hover:scale-105 hover:bg-violet-500 hover:shadow-violet-500/50 hover:text-white active:bg-violet-600"
+      <button
+        onclick="home()"
+        class="basis-2/6 flex justify-center items-center gap-3 text-violet-600 hover:bg-white hover:shadow-sm active:bg-violet-200 hover:scale-105"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +43,8 @@
         </svg>
         <span>Home</span>
       </button>
-      <button onclick="journal()"
+      <button
+        onclick="journal()"
         class="basis-2/6 flex justify-center items-center gap-3 text-sky-600 hover:bg-white hover:shadow-sm active:bg-sky-200 hover:scale-105"
       >
         <svg
@@ -51,7 +53,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="size-5 inline stroke-2"
+          class="size-5 inline"
         >
           <path
             stroke-linecap="round"
@@ -61,8 +63,9 @@
         </svg>
         <span>Journal</span>
       </button>
-      <button onclick="calendar()"
-        class="basis-2/6 flex justify-center items-center gap-3 text-blue-600 hover:bg-white hover:shadow-sm active:bg-blue-200 hover:scale-105"
+      <button
+        onclick="calendar()"
+        class="basis-2/6 flex justify-center items-center gap-3 font-semibold text-blue-700 shadow-lg shadow-blue-500/20 bg-blue-100 hover:scale-105 hover:bg-blue-500 hover:shadow-blue-500/50 hover:text-white active:bg-blue-600"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +73,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="size-5 inline"
+          class="size-5 inline stroke-2"
         >
           <path
             stroke-linecap="round"
@@ -109,5 +112,210 @@
       </div>
     </div>
 
+    <div class="w-3/12 mx-auto mt-16">
+      <div class="grid grid-cols-3 items-center place-items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="size-12 stroke-slate-700 fill-slate-700"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+
+        <div>
+          <p
+            class="font-extrabold text-3xl bg-clip-text text-transparent bg-gradient-to-tr from-purple-500 to-pink-500 w-fit mx-auto"
+          >
+            December
+          </p>
+          <p class="text-center font-semibold text-slate-500 text-sm">2024</p>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          class="size-12 stroke-slate-700 fill-slate-700"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+            clip-rule="evenodd"
+          />
+        </svg>
+      </div>
+
+      <div
+        class="grid grid-cols-7 text-center font-bold text-xl place-items-center bg-white px-8 py-5 mt-8 rounded-2xl"
+      >
+        <p class="text-purple-500 drop-shadow-md mt-3">S</p>
+        <p class="text-purple-500 drop-shadow-md mt-3">M</p>
+        <p class="text-purple-500 drop-shadow-md mt-3">T</p>
+        <p class="text-purple-500 drop-shadow-md mt-3">W</p>
+        <p class="text-purple-500 drop-shadow-md mt-3">T</p>
+        <p class="text-purple-500 drop-shadow-md mt-3">F</p>
+        <p class="text-purple-500 drop-shadow-md mt-3">S</p>
+
+        <button
+          class="bg-pink-400 w-fit px-3 py-0.5 rounded-full border-8 border-pink-200 text-white mt-3 hover:bg-pink-500 hover:scale-105 transition-all hover:border-pink-300 active:bg-pink-300 active:border-pink-100"
+        >
+          1
+        </button>
+        <button class="text-slate-700 mt-3">2</button>
+        <button class="text-slate-700 mt-3">3</button>
+        <button
+          class="bg-pink-400 w-fit px-3 py-0.5 rounded-full border-8 border-pink-200 text-white mt-3 hover:bg-pink-500 hover:scale-105 transition-all hover:border-pink-300 active:bg-pink-300 active:border-pink-100"
+        >
+          4
+        </button>
+        <button class="text-slate-700 mt-3">5</button>
+        <button class="text-slate-700 mt-3">6</button>
+        <button
+          class="bg-pink-400 w-fit px-3 py-0.5 rounded-full border-8 border-pink-200 text-white mt-3 hover:bg-pink-500 hover:scale-105 transition-all hover:border-pink-300 active:bg-pink-300 active:border-pink-100"
+        >
+          7
+        </button>
+
+        <button
+          class="bg-pink-400 w-fit px-3 py-0.5 rounded-full border-8 border-pink-200 text-white mt-1 hover:bg-pink-500 hover:scale-105 transition-all hover:border-pink-300 active:bg-pink-300 active:border-pink-100"
+        >
+          8
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          9
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          10
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          11
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          12
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          13
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          14
+        </button>
+
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          15
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          16
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          17
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          18
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          19
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          20
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          21
+        </button>
+
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          22
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          23
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          24
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          25
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          26
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          27
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          28
+        </button>
+
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          29
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          30
+        </button>
+        <button
+          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        >
+          31
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function home() {
+        window.location.href = "home.html";
+      }
+      function journal() {
+        window.location.href = "entry.html";
+      }
+      function calendar() {
+        window.location.href = "calendar.html";
+      }
+    </script>
   </body>
 </html>
