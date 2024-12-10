@@ -30,6 +30,7 @@
     curMonth + " " + dayOfMonth + ", " + curYear; %> <% var todayLink =
     "/editEntry/"+curMonth + "-" + dayOfMonth + "-" + curYear + "-" + dayOfWeek
     %>
+    
     <div
       class="w-2/6 mx-auto rounded-xl p-3 flex place-items-center font-medium px-12 gap-12 *:py-1 *:rounded-full *:transition-all"
     >
@@ -148,12 +149,12 @@
             <p
               class="text-2xl font-extrabold text-sky-400 group-hover:text-white"
             >
-              <%= journal[0].temp %> °
+              <%= journal[journal.length-1].temp %> °
             </p>
             <p
               class="text-lg font-semibold text-sky-300 group-hover:text-sky-200 -mt-2"
             >
-              <%= journal[0].weather %>
+              <%= journal[journal.length-1].weather %>
             </p>
           </div>
         </div>
@@ -162,14 +163,14 @@
         <div
           class="w-fit bg-white mx-auto py-2 px-8 text-2xl font-bold rounded-full text-slate-800 shadow-lg"
         >
-          <p><%= journal[0].date.split("-")[0] %></p>
+          <p><%= journal[journal.length-1].date.split("-")[0] %></p>
         </div>
         <div
           class="bg-slate-800 rounded-xl py-4 px-6 pt-5 text-white text-5xl font-extrabold w-fit mx-auto mt-5 text-center shadow-lg hover:scale-105 transition-all hover:shadow-xl"
         >
-          <%= journal[0].date.split("-")[1] %><br />
+          <%= journal[journal.length-1].date.split("-")[1] %><br />
           <p class="font-medium text-lg text-slate-300">
-            <%= journal[0].day %>
+            <%= journal[journal.length-1].day %>
           </p>
         </div>
       </div>
@@ -197,7 +198,7 @@
             <p
               class="text-2xl font-extrabold text-rose-400 group-hover:text-white"
             >
-              <%= journal[0].sleep %>
+              <%= journal[journal.length-1].sleep %>
             </p>
             <p
               class="text-lg font-semibold text-rose-300 -mt-2 group-hover:text-rose-200"
@@ -210,17 +211,17 @@
 
       <div class="bg-white mt-8 col-span-3 rounded-xl px-8 pt-5">
         <div class="p-1.5 px-2 rounded-lg font-bold text-lg text-slate-700">
-          <%= journal[0].title %>
+          <%= journal[journal.length-1].title %>
         </div>
         <div
           class="bg-slate-100 text-justify p-5 px-5 rounded-lg text-sm font-medium text-slate-600 mt-3 h-100"
         >
-          <%= journal[0].details %>
+          <%= journal[journal.length-1].details %>
         </div>
         <p
           class="text-xs font-medium italic text-slate-500 mt-3 mb-3 text-right"
         >
-          Edited at <%= journal[0].date.replaceAll("-", " ") %>
+          Edited at <%= journal[journal.length-1].date.replaceAll("-", " ") %>
         </p>
       </div>
     </div>

@@ -159,6 +159,14 @@
         </svg>
       </div>
 
+      <% function check(dayNumber){
+        if (dayNumber === dayOfMonth){
+          return "bg-pink-400 w-fit px-3 py-0.5 rounded-full border-8 border-pink-200 text-white mt-1 hover:bg-pink-500 hover:scale-105 transition-all hover:border-pink-300 active:bg-pink-300 active:border-pink-100"
+        } else {
+          return "text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        }
+      } %>
+
       <div
         class="grid grid-cols-7 text-center font-bold text-xl place-items-center bg-white px-8 py-5 mt-8 rounded-2xl"
       >
@@ -170,162 +178,162 @@
         <p class="text-purple-500 drop-shadow-md mt-3">F</p>
         <p class="text-purple-500 drop-shadow-md mt-3">S</p>
 
-        <button id="1"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="1" onclick="window.location.href = '/editEntry/December-1-2024-Sunday'"
+          class="<%= check(1) %>"
         >
           1
         </button>
-        <button id="2"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="2" onclick="window.location.href = '/editEntry/December-2-2024-Monday'"
+          class="<%= check(2) %>"
         >
           2
         </button>
-        <button id="3"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="3" onclick="window.location.href = '/editEntry/December-3-2024-Tuesday'"
+          class="<%= check(3) %>"
         >
           3
         </button>
-        <button id="4"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="4" onclick="window.location.href = '/editEntry/December-4-2024-Wednesday'"
+          class="<%= check(4) %>"
         >
           4
         </button>
-        <button id="5"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="5" onclick="window.location.href = '/editEntry/December-5-2024-Thursday'"
+          class="<%= check(5) %>"
         >
           5
         </button>
-        <button id="6"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="6" onclick="window.location.href = '/editEntry/December-6-2024-Friday'"
+          class="<%= check(6) %>"
         >
           6
         </button>
-        <button id="7"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="7" onclick="window.location.href = '/editEntry/December-7-2024-Saturday'"
+          class="<%= check(7) %>"
         >
           7
         </button>
 
-        <button id="8"
-          class="bg-pink-400 w-fit px-3 py-0.5 rounded-full border-8 border-pink-200 text-white mt-1 hover:bg-pink-500 hover:scale-105 transition-all hover:border-pink-300 active:bg-pink-300 active:border-pink-100"
+        <button id="8" onclick="window.location.href = '/editEntry/December-8-2024-Sunday'"
+          class="<%= check(8) %>"
         >
           8
         </button>
-        <button id="9"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="9" onclick="window.location.href = '/editEntry/December-9-2024-Monday'"
+          class="<%= check(9) %>"
         >
           9
         </button>
-        <button id="10"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="10" onclick="window.location.href = '/editEntry/December-10-2024-Tuesday'"
+          class="<%= check(10) %>"
         >
           10
         </button>
-        <button id="11"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="11" onclick="window.location.href = '/editEntry/December-11-2024-Wednesday'"
+          class="<%= check(11) %>"
         >
           11
         </button>
-        <button id="12"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="12" onclick="window.location.href = '/editEntry/December-12-2024-Thursday'"
+          class="<%= check(12) %>"
         >
           12
         </button>
-        <button id="13"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="13" onclick="window.location.href = '/editEntry/December-13-2024-Friday'"
+          class="<%= check(13) %>"
         >
           13
         </button>
-        <button id="14"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="14" onclick="window.location.href = '/editEntry/December-14-2024-Saturday'"
+          class="<%= check(14) %>"
         >
           14
         </button>
 
-        <button id="15"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="15" onclick="window.location.href = '/editEntry/December-15-2024-Sunday'"
+          class="<%= check(15) %>"
         >
           15
         </button>
-        <button id="16"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="16" onclick="window.location.href = '/editEntry/December-16-2024-Monday'"
+          class="<%= check(16) %>"
         >
           16
         </button>
-        <button id="17"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="17" onclick="window.location.href = '/editEntry/December-17-2024-Tuesday'"
+          class="<%= check(17) %>"
         >
           17
         </button>
-        <button id="18"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="18" onclick="window.location.href = '/editEntry/December-18-2024-Wednesday'"
+          class="<%= check(18) %>"
         >
           18
         </button>
-        <button id="19"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="19" onclick="window.location.href = '/editEntry/December-19-2024-Thursday'"
+          class="<%= check(19) %>"
         >
           19
         </button>
-        <button id="20"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="20" onclick="window.location.href = '/editEntry/December-20-2024-Friday'"
+          class="<%= check(20) %>"
         >
           20
         </button>
-        <button id="21"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="21" onclick="window.location.href = '/editEntry/December-21-2024-Saturday'"
+          class="<%= check(21) %>"
         >
           21
         </button>
 
-        <button id="22"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="22" onclick="window.location.href = '/editEntry/December-22-2024-Sunday'"
+          class="<%= check(22) %>"
         >
           22
         </button>
-        <button id="23"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="23" onclick="window.location.href = '/editEntry/December-23-2024-Monday'"
+          class="<%= check(23) %>"
         >
           23
         </button>
-        <button id="24"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="24" onclick="window.location.href = '/editEntry/December-24-2024-Tuesday'"
+          class="<%= check(24) %>"
         >
           24
         </button>
-        <button id="25"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="25" onclick="window.location.href = '/editEntry/December-25-2024-Wednesday'"
+          class="<%= check(25) %>"
         >
           25
         </button>
-        <button id="26"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="26" onclick="window.location.href = '/editEntry/December-26-2024-Thursday'"
+          class="<%= check(26) %>"
         >
           26
         </button>
-        <button id="27"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="27" onclick="window.location.href = '/editEntry/December-27-2024-Friday'"
+          class="<%= check(27) %>"
         >
           27
         </button>
-        <button id="28"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="28" onclick="window.location.href = '/editEntry/December-28-2024-Saturday'"
+          class="<%= check(28) %>"
         >
           28
         </button>
 
-        <button id="29"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="29" onclick="window.location.href = '/editEntry/December-29-2024-Sunday'"
+          class="<%= check(29) %>"
         >
           29
         </button>
-        <button id="30"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="30" onclick="window.location.href = '/editEntry/December-30-2024-Monday'"
+          class="<%= check(30) %>"
         >
           30
         </button>
-        <button id="31"
-          class="text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+        <button id="31" onclick="window.location.href = '/editEntry/December-31-2024-Tuesday'"
+          class="<%= check(31) %>"
         >
           31
         </button>
@@ -335,9 +343,6 @@
     <script>
       function home() {
         window.location.href = "home";
-      }
-      function journal() {
-        window.location.href = "entry";
       }
       function calendar() {
         window.location.href = "calendar";

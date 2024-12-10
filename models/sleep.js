@@ -9,6 +9,10 @@ const sleepSchema = new Schema ({
     date:{
         type: String,
         required: true
+    },
+    day:{
+        type: Number,
+        required: true
     }
 }, {timestamps: true});
 

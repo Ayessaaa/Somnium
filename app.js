@@ -33,6 +33,7 @@ app.get("/", (req, res) => {
 
 app.get("/home", (req, res) => {
   Sleep.find()
+  .sort({'day': -1})
     .then((result) => {
       console.log(result);
       res.render("home", { sleep: result });
@@ -82,6 +83,21 @@ app.post("/editEntry/:date", (req, res) => {
   });
 
   journal
+    .save()
+    .then((result) => {
+      res.redirect("/entry/" + req.params.date);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+
+  const sleep = new Sleep({
+    hour: parseInt(req.body.hour)+ parseFloat(req.body.minute/60),
+    date: date[0]+"-"+date[1],
+    day: date[1]
+  })
+  
+  sleep
     .save()
     .then((result) => {
       res.redirect("/entry/" + req.params.date);
