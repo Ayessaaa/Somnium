@@ -20,7 +20,16 @@
   <body
     class="px-10 py-5 bg-gradient-to-r to-blue-50 from-violet-50 via-pink-50"
   >
-  
+    <% var objToday = new Date(), weekday = new Array('Sunday', 'Monday',
+    'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'), dayOfWeek =
+    weekday[objToday.getDay()], dayOfMonth = today + ( objToday.getDate() < 10)
+    ? '0' + objToday.getDate() + domEnder : objToday.getDate() , months = new
+    Array('January', 'February', 'March', 'April', 'May', 'June', 'July',
+    'August', 'September', 'October', 'November', 'December'), curMonth =
+    months[objToday.getMonth()], curYear = objToday.getFullYear(); var today =
+    curMonth + " " + dayOfMonth + ", " + curYear; %> <% var todayLink =
+    "/editEntry/"+curMonth + "-" + dayOfMonth + "-" + curYear + "-" + dayOfWeek
+    %>
     <div
       class="w-2/6 mx-auto rounded-xl p-3 flex place-items-center font-medium px-12 gap-12 *:py-1 *:rounded-full *:transition-all"
     >
@@ -45,7 +54,7 @@
         <span>Home</span>
       </button>
       <button
-        onclick="journal()"
+        onclick="window.location.href = '<%= todayLink %>'"
         class="basis-2/6 flex justify-center items-center gap-3 text-sky-600 hover:bg-white hover:shadow-sm active:bg-sky-200 hover:scale-105"
       >
         <svg
@@ -119,7 +128,7 @@
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
           fill="currentColor"
-          class="size-12 stroke-slate-700 fill-slate-700"
+          class="size-12 stroke-yellow-500 fill-yellow-500"
         >
           <path
             fill-rule="evenodd"
@@ -309,13 +318,13 @@
 
     <script>
       function home() {
-        window.location.href = "home.html";
+        window.location.href = "home";
       }
       function journal() {
-        window.location.href = "entry.html";
+        window.location.href = "entry";
       }
       function calendar() {
-        window.location.href = "calendar.html";
+        window.location.href = "calendar";
       }
     </script>
   </body>

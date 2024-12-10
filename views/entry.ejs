@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./output.css" rel="stylesheet" />
+    <link href="/output.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,10 +20,21 @@
   <body
     class="px-10 py-5 bg-gradient-to-r to-blue-50 from-violet-50 via-pink-50"
   >
+    <% var objToday = new Date(), weekday = new Array('Sunday', 'Monday',
+    'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'), dayOfWeek =
+    weekday[objToday.getDay()], dayOfMonth = today + ( objToday.getDate() < 10)
+    ? '0' + objToday.getDate() + domEnder : objToday.getDate() , months = new
+    Array('January', 'February', 'March', 'April', 'May', 'June', 'July',
+    'August', 'September', 'October', 'November', 'December'), curMonth =
+    months[objToday.getMonth()], curYear = objToday.getFullYear(); var today =
+    curMonth + " " + dayOfMonth + ", " + curYear; %> <% var todayLink =
+    "/editEntry/"+curMonth + "-" + dayOfMonth + "-" + curYear + "-" + dayOfWeek
+    %>
     <div
       class="w-2/6 mx-auto rounded-xl p-3 flex place-items-center font-medium px-12 gap-12 *:py-1 *:rounded-full *:transition-all"
     >
-      <button onclick="home()"
+      <button
+        onclick="home()"
         class="basis-2/6 flex justify-center items-center gap-3 text-violet-600 hover:bg-white hover:shadow-sm active:bg-violet-200 hover:scale-105"
       >
         <svg
@@ -42,7 +53,8 @@
         </svg>
         <span>Home</span>
       </button>
-      <button onclick="journal()"
+      <button
+        onclick="window.location.href = '<%= todayLink %>'"
         class="basis-2/6 flex justify-center items-center gap-3 font-semibold text-sky-700 shadow-lg shadow-sky-500/20 bg-sky-100 hover:scale-105 hover:bg-sky-500 hover:shadow-sky-500/50 hover:text-white active:bg-sky-600"
       >
         <svg
@@ -61,7 +73,8 @@
         </svg>
         <span>Journal</span>
       </button>
-      <button onclick="calendar()"
+      <button
+        onclick="calendar()"
         class="basis-2/6 flex justify-center items-center gap-3 text-blue-600 hover:bg-white hover:shadow-sm active:bg-blue-200 hover:scale-105"
       >
         <svg
@@ -135,12 +148,12 @@
             <p
               class="text-2xl font-extrabold text-sky-400 group-hover:text-white"
             >
-              26°
+              <%= journal[0].temp %> °
             </p>
             <p
               class="text-lg font-semibold text-sky-300 group-hover:text-sky-200 -mt-2"
             >
-              Mostly Clear
+              <%= journal[0].weather %>
             </p>
           </div>
         </div>
@@ -149,13 +162,15 @@
         <div
           class="w-fit bg-white mx-auto py-2 px-8 text-2xl font-bold rounded-full text-slate-800 shadow-lg"
         >
-          <p>December</p>
+          <p><%= journal[0].date.split("-")[0] %></p>
         </div>
         <div
           class="bg-slate-800 rounded-xl py-4 px-6 pt-5 text-white text-5xl font-extrabold w-fit mx-auto mt-5 text-center shadow-lg hover:scale-105 transition-all hover:shadow-xl"
         >
-          5<br />
-          <p class="font-medium text-lg text-slate-300">Thursday</p>
+          <%= journal[0].date.split("-")[1] %><br />
+          <p class="font-medium text-lg text-slate-300">
+            <%= journal[0].day %>
+          </p>
         </div>
       </div>
 
@@ -182,7 +197,7 @@
             <p
               class="text-2xl font-extrabold text-rose-400 group-hover:text-white"
             >
-              8h 31m
+              <%= journal[0].sleep %>
             </p>
             <p
               class="text-lg font-semibold text-rose-300 -mt-2 group-hover:text-rose-200"
@@ -194,43 +209,28 @@
       </div>
 
       <div class="bg-white mt-8 col-span-3 rounded-xl px-8 pt-5">
-        <div class="p-1.5 px-5 rounded-lg font-bold text-lg text-slate-700">
-          Forest adventure trying to find a treasure chest
+        <div class="p-1.5 px-2 rounded-lg font-bold text-lg text-slate-700">
+          <%= journal[0].title %>
         </div>
         <div
           class="bg-slate-100 text-justify p-5 px-5 rounded-lg text-sm font-medium text-slate-600 mt-3 h-100"
         >
-          I woke up to the sound of birds chirping outside my window. Today was
-          the day—Jack and I were going to find the treasure chest hidden deep
-          in the forest. The old wizard’s story echoed in my head: “Only the
-          brave and kind-hearted will succeed.” We grabbed our backpacks and set
-          off. The forest was alive with rustling leaves and sunlight peeking
-          through the trees. My heart raced when we found the first clue etched
-          into an old tree: “Follow the path where flowers glow.” As we walked,
-          glowing blue flowers lit the way. We crossed a wobbly bridge, dodged a
-          playful squirrel, and finally reached a clearing. There it was—the
-          treasure chest! Jack and I pushed open the lid, and inside, we found
-          shiny coins and a note: “The true treasure is your courage and
-          friendship.” I smiled at Jack. This was the best adventure ever.
+          <%= journal[0].details %>
         </div>
         <p
           class="text-xs font-medium italic text-slate-500 mt-3 mb-3 text-right"
         >
-        
-          Edited at 12-05-23
+          Edited at <%= journal[0].date.replaceAll("-", " ") %>
         </p>
       </div>
     </div>
 
     <script>
       function home() {
-        window.location.href = "home.html";
-      }
-      function journal() {
-        window.location.href = "entry.html";
+        window.location.href = "/home";
       }
       function calendar() {
-        window.location.href = "calendar.html";
+        window.location.href = "/calendar";
       }
     </script>
   </body>
