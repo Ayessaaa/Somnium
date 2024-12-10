@@ -223,28 +223,46 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+    <% 
+    sleepArray = []
+    sleep.forEach(element => {
+      sleepArray.push(element.hour)
+    }); 
+
+    dateArray = []
+    sleep.forEach(element => {
+      dateArray.push(element.date)
+    }); 
+    %>
+
     <script>
       Chart.defaults.color = "white";
       Chart.defaults.font.family = "Poppins";
       const ctx = document.getElementById("myChart");
       const bar = document.getElementById("barChart");
 
+      
+
       new Chart(ctx, {
         type: "line",
         data: {
-          labels: [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-          ],
+          labels: ['<%- dateArray[6] %>',
+                  '<%- dateArray[5] %>',
+                  '<%- dateArray[4] %>',
+                  '<%- dateArray[3] %>',
+                  '<%- dateArray[2] %>',
+                  '<%- dateArray[1] %>',
+                  '<%- dateArray[0] %>'],
           datasets: [
             {
               label: " Sleep Hours (hrs)",
-              data: [8, 7, 6.3, 7.7, 9.1, 6.5, 8],
+              data: ['<%- sleepArray[6] %>',
+                  '<%- sleepArray[5] %>',
+                  '<%- sleepArray[4] %>',
+                  '<%- sleepArray[3] %>',
+                  '<%- sleepArray[2] %>',
+                  '<%- sleepArray[1] %>',
+                  '<%- sleepArray[0] %>'],
               borderWidth: 1,
               tension: 0.5,
               borderWidth: 3,

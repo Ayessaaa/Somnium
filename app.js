@@ -6,6 +6,7 @@ const { render } = require("ejs");
 dotenv.config({ path: "vars/.env" });
 
 const Journal = require("./models/journal");
+const Sleep = require("./models/sleep");
 
 const app = express();
 
@@ -31,9 +32,16 @@ app.get("/", (req, res) => {
 });
 
 app.get("/home", (req, res) => {
-  res.render("home");
+  Sleep.find()
+    .then((result) => {
+      console.log(result);
+      res.render("home", { sleep: result });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  
 });
-
 
 app.get("/entry/:date", (req, res) => {
   date = req.params.date.split("-");
@@ -60,20 +68,23 @@ app.get("/editEntry/:date", (req, res) => {
 });
 
 app.post("/editEntry/:date", (req, res) => {
+  date = req.params.date.split("-");
+  datee = date[0] + "-" + date[1] + "-" + date[2];
+
   const journal = new Journal({
-    title: "title",
-    details: "details",
-    date: "date",
-    day: "day",
-    sleep: "sleep",
-    temp: 1,
-    weather: "weather",
+    title: req.body.title,
+    details: req.body.body,
+    date: datee,
+    day: date[3],
+    sleep: req.body.hour + "h" + " " + req.body.minute + "m",
+    temp: 29,
+    weather: "Mostly Clear",
   });
 
   journal
     .save()
     .then((result) => {
-      res.redirect("/");
+      res.redirect("/entry/" + req.params.date);
     })
     .catch((err) => {
       console.log(err);
