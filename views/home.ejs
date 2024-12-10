@@ -94,7 +94,7 @@
         <span>Calendar</span>
       </button>
     </div>
-    <div class="w-fit mx-auto mt-10">
+    <div class="hover:scale-105 transition-all w-fit mx-auto mt-10">
       <p class="font-bold text-6xl text-center mt-5 drop-shadow-lg text-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -246,13 +246,13 @@
       new Chart(ctx, {
         type: "line",
         data: {
-          labels: ['<%- dateArray[6] %>',
-                  '<%- dateArray[5] %>',
-                  '<%- dateArray[4] %>',
-                  '<%- dateArray[3] %>',
-                  '<%- dateArray[2] %>',
-                  '<%- dateArray[1] %>',
-                  '<%- dateArray[0] %>'],
+          labels: ['<%- dateArray[6].replace("December", "Dec") %>',
+                  '<%- dateArray[5].replace("December", "Dec") %>',
+                  '<%- dateArray[4].replace("December", "Dec") %>',
+                  '<%- dateArray[3].replace("December", "Dec") %>',
+                  '<%- dateArray[2].replace("December", "Dec") %>',
+                  '<%- dateArray[1].replace("December", "Dec") %>',
+                  '<%- dateArray[0].replace("December", "Dec") %>'],
           datasets: [
             {
               label: " Sleep Hours (hrs)",

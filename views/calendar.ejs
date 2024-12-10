@@ -94,7 +94,7 @@
         <span>Calendar</span>
       </button>
     </div>
-    <div class="w-fit mx-auto mt-10">
+    <div class="w-fit mx-auto mt-10 hover:scale-105 transition-all">
       <p class="font-bold text-6xl text-center mt-5 drop-shadow-lg text-white">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +163,7 @@
         if (dayNumber === dayOfMonth){
           return "bg-pink-400 w-fit px-3 py-0.5 rounded-full border-8 border-pink-200 text-white mt-1 hover:bg-pink-500 hover:scale-105 transition-all hover:border-pink-300 active:bg-pink-300 active:border-pink-100"
         } else {
-          return "text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent"
+          return "text-slate-700 mt-1 px-3 py-0.5 border-8 border-transparent hover:text-slate-800 hover:scale-105 transition-all"
         }
       } %>
 
