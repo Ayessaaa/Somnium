@@ -33,15 +33,20 @@ app.get("/", (req, res) => {
 
 app.get("/home", (req, res) => {
   Sleep.find()
-  .sort({'day': -1})
+    .sort({ day: -1 })
     .then((result) => {
-      console.log(result);
-      res.render("home", { sleep: result });
+      Journal.find()
+        .then((result2) => {
+          console.log(result2.length);
+          res.render("home", { sleep: result , journal: result2});
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     })
     .catch((err) => {
       console.log(err);
     });
-  
 });
 
 app.get("/entry/:date", (req, res) => {
@@ -68,7 +73,7 @@ app.get("/editEntry/:date", (req, res) => {
     });
 });
 
-app.post("/editEntry/:date", (req, res) => {
+app.post("/editEntry/:date", async (req, res) => {
   date = req.params.date.split("-");
   datee = date[0] + "-" + date[1] + "-" + date[2];
 
@@ -82,29 +87,73 @@ app.post("/editEntry/:date", (req, res) => {
     weather: "Mostly Clear",
   });
 
-  journal
-    .save()
-    .then((result) => {
-      res.redirect("/entry/" + req.params.date);
-    })
-    .catch((err) => {
-      console.log(err);
+  const result = await Journal.updateOne(
+    { date: datee },
+    {
+      title: req.body.title,
+      details: req.body.body,
+      date: datee,
+      day: date[3],
+      sleep: req.body.hour + "h" + " " + req.body.minute + "m",
+      temp: 29,
+      weather: "Mostly Clear",
+    }
+  );
+
+  console.log("Update Result:", result);
+
+  if (result.matchedCount === 0) {
+    console.log("No matching document found to update.");
+    journal
+      .save()
+      .then((result) => {
+        res.redirect("/entry/" + req.params.date);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  } else {
+    const sleep = new Sleep({
+      hour: parseInt(req.body.hour) + parseFloat(req.body.minute / 60),
+      date: date[0] + "-" + date[1],
+      day: date[1],
     });
 
-  const sleep = new Sleep({
-    hour: parseInt(req.body.hour)+ parseFloat(req.body.minute/60),
-    date: date[0]+"-"+date[1],
-    day: date[1]
-  })
-  
-  sleep
-    .save()
-    .then((result) => {
+    const result2 = await Sleep.updateOne(
+      { date: date[0] + "-" + date[1] },
+      {
+        hour: parseInt(req.body.hour) + parseFloat(req.body.minute / 60),
+        date: date[0] + "-" + date[1],
+        day: date[1],
+      }
+    );
+
+    console.log("Update Result:", result2);
+
+    if (result2.matchedCount === 0) {
+      console.log("No matching document found to update.");
+      sleep
+        .save()
+        .then((result) => {
+          res.redirect("/entry/" + req.params.date);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      console.log("Document updated successfully.");
       res.redirect("/entry/" + req.params.date);
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+    }
+  }
+
+  // sleep
+  //   .save()
+  //   .then((result) => {
+  //     res.redirect("/entry/" + req.params.date);
+  //   })
+  //   .catch((err) => {
+  //     console.log(err);
+  //   });
 });
 
 app.get("/calendar", (req, res) => {
