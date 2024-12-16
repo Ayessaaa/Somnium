@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
-  res.render("home");
+  res.redirect("/home");
 });
 
 app.get("/home", (req, res) => {
@@ -38,7 +38,7 @@ app.get("/home", (req, res) => {
       Journal.find()
         .then((result2) => {
           console.log(result2.length);
-          res.render("home", { sleep: result , journal: result2});
+          res.render("home", { sleep: result, journal: result2 });
         })
         .catch((err) => {
           console.log(err);
@@ -100,6 +100,12 @@ app.post("/editEntry/:date", async (req, res) => {
     }
   );
 
+  const sleep = new Sleep({
+    hour: parseInt(req.body.hour) + parseFloat(req.body.minute / 60),
+    date: date[0] + "-" + date[1],
+    day: date[1],
+  });
+
   console.log("Update Result:", result);
 
   if (result.matchedCount === 0) {
@@ -107,18 +113,20 @@ app.post("/editEntry/:date", async (req, res) => {
     journal
       .save()
       .then((result) => {
+        sleep
+          .save()
+          .then((result) => {
+            res.redirect("/entry/" + req.params.date);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
         res.redirect("/entry/" + req.params.date);
       })
       .catch((err) => {
         console.log(err);
       });
   } else {
-    const sleep = new Sleep({
-      hour: parseInt(req.body.hour) + parseFloat(req.body.minute / 60),
-      date: date[0] + "-" + date[1],
-      day: date[1],
-    });
-
     const result2 = await Sleep.updateOne(
       { date: date[0] + "-" + date[1] },
       {
