@@ -80,11 +80,11 @@ nodemon app
 ### Home
 ![image](https://github.com/user-attachments/assets/4464ab4a-8092-46d4-9116-448600d56195)
 
-**Sleep History** - This is a chart JS graph which shows your 7 day previous sleep hours (This works but breaks sometimes, need updating).
+**Sleep History** - This is a chart JS graph which shows your 7 day previous sleep hours.
 
 **Did you dream prompt** - This card redirects you to the journal entry page of that date if yes is clicked.
 
-**Dream Count** - This is a chart JS graph that shows the total of your dreams that month (This is not yet working, will work on it next update)
+**Dream Count** - This is a chart JS graph that shows the total of your dreams that month (the calendar is only for december yet, need updating)
 
 ### Journal
 ![image](https://github.com/user-attachments/assets/a10d0093-1134-4016-98ed-74670b526744)
@@ -104,8 +104,12 @@ nodemon app
 ### Calendar
 ![image](https://github.com/user-attachments/assets/87392bed-53e2-41f3-962a-60009589c1ce)
 
+The Calendar is limited to only the month of December (needs updating).
 Every date is clickable and you will be redirected to that journal entry date.
 The colored date is the current date.
+
+### Updates
+
 
 ## Contributing
 
